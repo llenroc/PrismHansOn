@@ -5,8 +5,12 @@
              mvvm:ViewModelLocator.AutowireViewModel="True"
              x:Class="PrismHansOn.Views.MainPage">
 
-	<Label Text="{Binding Message}" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Label Text="{Binding Message}" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+        <Button Text="Update Message" Command="{Binding UpdateMessageCommand}"/>
+        <Switch IsToggled="{Binding CanUpdateMessage}"/>
+    </StackLayout>
 
 </ContentPage>

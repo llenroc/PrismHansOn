@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
 
 namespace PrismHansOn.ViewModels
 {
@@ -11,5 +12,18 @@ namespace PrismHansOn.ViewModels
 			get => _message;
 			set => SetProperty(ref _message, value);
 		}
+
+		private bool _canUpdateMessage;
+
+		public bool CanUpdateMessage
+		{
+			get => _canUpdateMessage;
+			set => SetProperty(ref _canUpdateMessage, value);
+		}
+
+		public DelegateCommand UpdateMessageCommand => new DelegateCommand(() =>
+		{
+			Message = "Updated message.";
+		}).ObservesCanExecute(() => CanUpdateMessage);
 	}
 }
