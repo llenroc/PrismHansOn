@@ -1,4 +1,5 @@
 ﻿using Prism.Autofac.Forms;
+using PrismHansOn.Views;
 
 namespace PrismHansOn
 {
@@ -6,7 +7,8 @@ namespace PrismHansOn
 	{
 		protected override void RegisterTypes()
 		{
-			Container.RegisterTypeForNavigation<Views.MainPage>();
+			Container.RegisterTypeForNavigation<MainPage>();
+			Container.RegisterTypeForNavigation<TextToSpeechPage>();
 		}
 
 		protected override void OnInitialized()
