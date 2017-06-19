@@ -11,6 +11,7 @@
                HorizontalOptions="Center" />
         <Button Text="Update Message" Command="{Binding UpdateMessageCommand}"/>
         <Switch IsToggled="{Binding CanUpdateMessage}"/>
+        <Button Text="Navigate to TextToSpeechPage" Command="{Binding NavigateToTextToSpeechPageCommand}"/>
     </StackLayout>
 
 </ContentPage>

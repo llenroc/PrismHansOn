@@ -1,5 +1,6 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
 using Prism.Services;
 
 namespace PrismHansOn.ViewModels
@@ -7,6 +8,9 @@ namespace PrismHansOn.ViewModels
 	public class MainPageViewModel : BindableBase
 	{
 		private readonly IDeviceService _deviceService;
+
+	    private readonly INavigationService _navigationService;
+
 		private string _message = "Hello, Prism for Xamarin.Forms!";
 
 		public string Message
@@ -28,10 +32,19 @@ namespace PrismHansOn.ViewModels
 			Message = "Updated message.";
 		}).ObservesCanExecute(() => CanUpdateMessage);
 
-		public MainPageViewModel(IDeviceService deviceService)
+	    public DelegateCommand NavigateToTextToSpeechPageCommand => new DelegateCommand(() =>
+	    {
+            var navigationParameter = new NavigationParameters();
+            navigationParameter.Add("Message", "Hello, NavigationParameter.");
+	        _navigationService.NavigateAsync("TextToSpeechPage", navigationParameter);
+	    });
+
+
+        public MainPageViewModel(IDeviceService deviceService, INavigationService navigationService)
 		{
 			_deviceService = deviceService;
-			Message = Message + " on " + _deviceService.Platform;
+		    _navigationService = navigationService;
+		    Message = Message + " on " + _deviceService.Platform;
 		}
 	}
 }
