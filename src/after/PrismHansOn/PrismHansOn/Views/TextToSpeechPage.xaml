@@ -6,7 +6,7 @@
              x:Class="PrismHansOn.Views.TextToSpeechPage">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Fill" VerticalOptions="Center">
-            <Label Text="Welcome to Xamarin Forms!" />
+            <Label Text="{Binding Message}" />
             <Button Text="Go Back" Command="{Binding GoBackCommand}"/>
         </StackLayout>
     </ContentPage.Content>

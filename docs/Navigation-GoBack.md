@@ -1,70 +1,8 @@
-# 基本の画面遷移
+# 前画面へ戻る  
 
-## 別画面へ遷移する  
+## TextToSpeechPageViewModel.csの追加
 
-### TextToSpeechPageの追加
-
-
-
-### TextToSpeechPageをDIコンテナへ登録  
-
-```cs
-protected override void RegisterTypes()
-{
-    Container.RegisterTypeForNavigation<MainPage>();
-    Container.RegisterTypeForNavigation<TextToSpeechPage>();
-}
-```
-
-### MainPageViewModelへINavigationServiceのインジェクション  
-
-MainPageViewModelにつぎのコードを追加する。  
-
-```cs
-private readonly INavigationService _navigationService;
-```
-
-コンストラクタを修正します。  
-
-変更前
-```cs
-public MainPageViewModel(IDeviceService deviceService)
-{
-    _deviceService = deviceService;
-    Message = Message + " on " + _deviceService.Platform;
-}
-```
-
-変更後
-```cs
-public MainPageViewModel(IDeviceService deviceService, INavigationService navigationService)
-{
-    _deviceService = deviceService;
-    _navigationService = navigationService;
-    Message = Message + " on " + _deviceService.Platform;
-}
-```
-
-INavigationServiceをインジェクションする場合、引数名はnavigationServiceである必要があります。
-
-### MainPageViewModelへ画面遷移コマンドの追加
-
-MainPageViewModelにつぎのコードを追加する。  
-
-```cs
-public DelegateCommand NavigateToTextToSpeechPageCommand => new DelegateCommand(() =>
-{
-    _navigationService.NavigateAsync("TextToSpeechPage");
-});
-```
-
-### MainPage.xamlへ画面遷移ボタンの追加  
-
-## 前画面へ戻る  
-
-### TextToSpeechPageViewModel.csの追加
-
-### TextToSpeechPageViewModel.csへ戻る処理の実装  
+## TextToSpeechPageViewModel.csへ戻る処理の実装  
 
 ```cs
 using Prism.Commands;
@@ -90,7 +28,7 @@ namespace PrismHansOn.ViewModels
 }
 ```
 
-### TextToSpeechPage.xamlの修正  
+## TextToSpeechPage.xamlの修正  
 
 * ViewModelLocator.AutowireViewModelの有効化  
 * 戻るボタンの追加  
@@ -174,4 +112,42 @@ public class TextToSpeechPageViewModel : BindableBase, INavigationAware
 
 INavigationAwareインターフェースメソッドの追加  
 ```cs
+public void OnNavigatedFrom(NavigationParameters parameters)
+{
+}
+
+public void OnNavigatedTo(NavigationParameters parameters)
+{
+}
+
+public void OnNavigatingTo(NavigationParameters parameters)
+{
+}
+```
+
+パラメーター受け取り処理の追加
+変更前
+```cs
+public void OnNavigatingTo(NavigationParameters parameters)
+{
+}
+```
+
+変更後
+```cs
+public void OnNavigatingTo(NavigationParameters parameters)
+{
+}
+```
+
+### TextToSpeechPage.xamlへMessageプロパティをバインドする  
+
+変更前
+```xml
+<Label Text="Welcome to Xamarin Forms!" />
+```
+
+変更後
+```xml
+<Label Text="{Binding Message}" />
 ```

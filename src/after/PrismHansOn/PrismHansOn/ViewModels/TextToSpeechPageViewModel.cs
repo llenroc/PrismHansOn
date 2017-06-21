@@ -37,6 +37,7 @@ namespace PrismHansOn.ViewModels
 
         public void OnNavigatingTo(NavigationParameters parameters)
         {
+	        Message = (string)parameters["Message"];
         }
     }
 }

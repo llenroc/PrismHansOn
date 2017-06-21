@@ -1,0 +1,87 @@
+# 画面遷移パラメーター  
+
+## MainPageViewModel.csで遷移パラメーターの指定  
+
+変更前  
+```cs
+public DelegateCommand NavigateToTextToSpeechPageCommand => new DelegateCommand(() =>
+{
+    _navigationService.NavigateAsync("TextToSpeechPage");
+});
+```
+
+変更後  
+```cs
+public DelegateCommand NavigateToTextToSpeechPageCommand => new DelegateCommand(() =>
+{
+    var navigationParameter = new NavigationParameters();
+    navigationParameter.Add("Message", "Hello, NavigationParameter.");
+    _navigationService.NavigateAsync("TextToSpeechPage", navigationParameter);
+});
+```
+
+## TextToSpeechPageViewModel.csへパラメーター受け取り処理の追加  
+
+「Message」パラメーターを格納し、画面へ表示するためのプロパティの追加  
+```cs
+private string _message;
+
+public string Message
+{
+    get => _message;
+    set => SetProperty(ref _message, value);
+}
+```
+
+INavigationAwareの宣言の追加  
+変更前  
+```cs
+public class TextToSpeechPageViewModel : BindableBase
+```  
+
+変更後  
+```cs
+public class TextToSpeechPageViewModel : BindableBase, INavigationAware
+```  
+
+INavigationAwareインターフェースメソッドの追加  
+```cs
+public void OnNavigatedFrom(NavigationParameters parameters)
+{
+}
+
+public void OnNavigatedTo(NavigationParameters parameters)
+{
+}
+
+public void OnNavigatingTo(NavigationParameters parameters)
+{
+}
+```
+
+パラメーター受け取り処理の追加
+変更前
+```cs
+public void OnNavigatingTo(NavigationParameters parameters)
+{
+}
+```
+
+変更後
+```cs
+public void OnNavigatingTo(NavigationParameters parameters)
+{
+}
+```
+
+## TextToSpeechPage.xamlへMessageプロパティをバインドする  
+
+変更前
+```xml
+<Label Text="Welcome to Xamarin Forms!" />
+```
+
+変更後
+```xml
+<Label Text="{Binding Message}" />
+```
