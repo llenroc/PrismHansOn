@@ -2,7 +2,7 @@
 
 ## スライド
 
-[https://gitpitch.com/nuitsjp/PrismHansOn#](https://gitpitch.com/nuitsjp/PrismHansOn#)
+[https://gitpitch.com/nuitsjp/PrismHansOn](https://gitpitch.com/nuitsjp/PrismHansOn)
 
 ## 内容
 1. [Prismをアプリケーションに適用する](docs/ApplyPrism.md)
