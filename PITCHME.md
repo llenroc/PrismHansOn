@@ -1,4 +1,5 @@
-### Prism for Xamarin.Forms入門 Hans-On
+# Prism for Xamarin.Forms
+# 入門 Hans-On
 
 ---
 
