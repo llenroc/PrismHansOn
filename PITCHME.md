@@ -4,7 +4,7 @@
 ---
 
 
-# What is Prism?
+### Prismとは何か？
 
 * XAML Application Framework  
 * Guidance  
@@ -16,7 +16,7 @@
 ---
 
 
-# What do you get?
+### Prismは何を提供するか？
 
 * MVVM Support
 * Commanding
@@ -28,10 +28,14 @@
 
 ---
 
-
-# Why use Prism?  
+### なぜPrismを使うか？  
 
 * フルセットのMVVMフレームワーク  
 * WPF・UWPともベースが共通化されている  
 （知識の再利用性）  
 * 画面スタックの復元まで考慮されたNavigation
+
+---
+
+### だれがPrismを使うべきか？  
+
