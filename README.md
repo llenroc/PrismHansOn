@@ -14,4 +14,4 @@
     1. [基本の画面遷移](docs/04-01-基本の画面遷移.md)
     1. [前画面へ戻る](docs/04-02-前画面へ戻る.md)
     1. [画面遷移パラメーター](docs/04-03-画面遷移パラメーター.md)
-5. [Dependency Injectionを利用する](docs/05-Dependency Injectionを利用する.md)
+5. [Dependency Injectionを利用する](docs/05-DependencyInjectionを利用する.md)
