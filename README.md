@@ -1,5 +1,10 @@
 # Prism for Xamarin.Forms入門 Hans-on
 
+## スライド
+
+[https://gitpitch.com/nuitsjp/PrismHansOn](https://gitpitch.com/nuitsjp/PrismHansOn)
+
+## 内容
 1. [Prismをアプリケーションに適用する](docs/01-Prismをアプリケーションに適用する.md)
 2. [ViewModelを追加する](docs/02-AddViewModel.md)  
 3. DelegateCommandを利用する  
