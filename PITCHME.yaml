@@ -5,4 +5,5 @@ logo : images/jxug.png
 background : images/background.png
 
 # スライド設定  
-slide-number: true
+slide-number: true  
+footnote : "© 2017 Japan Xamarin User Group."  
