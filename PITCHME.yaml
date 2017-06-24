@@ -1,8 +1,14 @@
 # ロゴアイコンの設定
-logo : images/jxug.png
+logo : assets/jxug.png
 
 # 背景  
-background : images/background.png
+background : assets/background.png
+
+# 垂直位置
+vertical-center : false
+
+# CSS
+
 
 # スライド設定  
 slide-number: true  
