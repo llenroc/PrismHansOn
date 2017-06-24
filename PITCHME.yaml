@@ -4,3 +4,5 @@ logo : images/jxug.png
 # 背景  
 background : images/background.png
 
+# スライド設定  
+slide-number: true
