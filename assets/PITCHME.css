@@ -20,3 +20,7 @@
     text-transform: none;
     font: mplus-2p-thin, sans-serif;
 }
+
+.reveal .slides section h2 {
+    text-align : center;
+}
