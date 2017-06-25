@@ -11,3 +11,7 @@
     text-transform : capitalize;
     font-family : mplus-1p-regular;
 }
+
+.reveal h1 {
+    text-transform: none;
+}
