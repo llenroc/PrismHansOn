@@ -8,7 +8,7 @@ background : assets/background.png
 vertical-center : false
 
 # CSS
-theme-override : assets/css/PITCHME.css
+theme-override : assets/PITCHME.css
 
 # スライド設定  
 slide-number: true  

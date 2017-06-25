@@ -18,6 +18,5 @@
 
 .reveal .slides section>* {
     text-transform: none;
-    font-weight: normal;
-    font-family: mplus-2p-thin, sans-serif;
+    font: mplus-2p-thin, sans-serif;
 }
