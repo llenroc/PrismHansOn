@@ -11,6 +11,12 @@
     font-family : mplus-2p-thin;
 }
 
+.reveal .slides section>* {
+    margin-left: 0;
+    margin-right: 0;
+    font-family : mplus-2p-thin;
+}
+
 .reveal h1 {
     text-transform: none;
     font-family : mplus-2p-thin;
