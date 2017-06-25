@@ -6,19 +6,14 @@
        url('http://mplus-webfonts.sourceforge.jp/mplus-2p-thin.ttf') format('truetype');
 }
 
-* {
-    font-weight: normal;
-    font-family: mplus-2p-thin, sans-serif;
-}
-
 .reveal .slides {
     text-align : left;
-    font-family : mplus-2p-thin;
 }
 
 .reveal .slides section>* {
     text-transform: none;
-    font: mplus-2p-thin, sans-serif;
+    font-weight: normal;
+    font-family: mplus-2p-thin, sans-serif;
 }
 
 .reveal .slides section h2 {
