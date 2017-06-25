@@ -23,6 +23,7 @@ h5 {
 }
 
 .reveal .slides {
-    text-align: left;
+    text-align : left;
     text-transform : capitalize;
+    font-family : mplus-2p-thin;
 }
