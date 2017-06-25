@@ -9,7 +9,6 @@ vertical-center : false
 
 # CSS
 theme-override : assets/css/PITCHME.css
-theme-override : http://mplus-webfonts.osdn.jp/mplus_webfonts.css
 
 # スライド設定  
 slide-number: true  
