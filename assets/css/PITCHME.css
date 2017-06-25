@@ -1,29 +1,13 @@
-* {
-    text-transform : capitalize;
-}
-
-h1 {
-    text-transform : capitalize;
-}
-
-h2 {
-    text-transform : capitalize;
-}
-
-h3 {
-    text-transform : capitalize;
-}
-
-h4 {
-    text-transform : capitalize;
-}
-
-h5 {
-    text-transform : capitalize;
+@font-face{ 
+  font-family: 'mplus-1p-regular';
+  src: url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot');
+  src: url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot?#iefix') format('embedded-opentype'),
+       url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.woff') format('woff'),
+       url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.ttf') format('truetype');
 }
 
 .reveal .slides {
     text-align : left;
     text-transform : capitalize;
-    font-family : mplus-2p-thin;
+    font-family : mplus-1p-regular;
 }

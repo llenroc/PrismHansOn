@@ -8,7 +8,6 @@ background : assets/background.png
 vertical-center : false
 
 # CSS
-theme-override : http://mplus-webfonts.sourceforge.jp/mplus_webfonts.css
 theme-override : assets/css/PITCHME.css
 
 # スライド設定  
