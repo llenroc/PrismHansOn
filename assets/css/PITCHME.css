@@ -1,43 +1,42 @@
 @font-face{ 
-  font-family: 'mplus-1p-regular';
-  src: url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot');
-  src: url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot?#iefix') format('embedded-opentype'),
-       url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.woff') format('woff'),
-       url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.ttf') format('truetype');
+  font-family: 'mplus-2p-thin';
+  src: url('http://mplus-webfonts.sourceforge.jp/mplus-2p-thin.eot');
+  src: url('http://mplus-webfonts.sourceforge.jp/mplus-2p-thin.eot?#iefix') format('embedded-opentype'),
+       url('http://mplus-webfonts.sourceforge.jp/mplus-2p-thin.woff') format('woff'),
+       url('http://mplus-webfonts.sourceforge.jp/mplus-2p-thin.ttf') format('truetype');
 }
 
 .reveal .slides {
     text-align : left;
-    text-transform : capitalize;
-    font-family : mplus-1p-regular;
+    font-family : mplus-2p-thin;
 }
 
 .reveal h1 {
     text-transform: none;
-    font-family : mplus-1p-regular;
+    font-family : mplus-2p-thin;
 }
 
 .reveal h2 {
     text-transform: none;
-    font-family : mplus-1p-regular;
+    font-family : mplus-2p-thin;
 }
 
 .reveal h3 {
     text-transform: none;
-    font-family : mplus-1p-regular;
+    font-family : mplus-2p-thin;
 }
 
 .reveal h4 {
     text-transform: none;
-    font-family : mplus-1p-regular;
+    font-family : mplus-2p-thin;
 }
 
 .reveal h5 {
     text-transform: none;
-    font-family : mplus-1p-regular;
+    font-family : mplus-2p-thin;
 }
 
 .reveal h6 {
     text-transform: none;
-    font-family : mplus-1p-regular;
+    font-family : mplus-2p-thin;
 }
