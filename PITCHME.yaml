@@ -5,7 +5,7 @@ logo : assets/jxug.png
 background : assets/background.png
 
 # 垂直位置
-vertical-center : false
+vertical-center : true
 
 # CSS
 theme-override : assets/PITCHME.css
