@@ -1,7 +1,7 @@
-# Prism for Xamarin.Forms
-# 入門 Hans-On
+## Prism for Xamarin.Forms
+## 入門 Hans-On
 
----
++++
 
 
 ### Prismとは何か？
@@ -13,7 +13,7 @@
 * Open Source  
 * .NET Foundation  
 
----
++++
 
 
 ### Prismは何を提供するか？
@@ -26,7 +26,7 @@
 * Dependency Injection
 * Logging
 
----
++++
 
 ### なぜPrismを使うか？  
 
@@ -35,7 +35,9 @@
 （知識の再利用性）  
 * 画面スタックの復元まで考慮されたNavigation
 
----
++++
 
 ### だれがPrismを使うべきか？  
 
+---
+## 
