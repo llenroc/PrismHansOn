@@ -1,5 +1,28 @@
 # NavigationPageを利用する
 
+## TextToSpeechPage.xamlへタイトルの追加  
+
+変更前
+```cs
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             mvvm:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PrismHansOn.Views.TextToSpeechPage">
+```
+
+変更後
+```cs
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             mvvm:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PrismHansOn.Views.TextToSpeechPage"
+             Title="Text to Speech Page">
+```
+
 ## App.xaml.csでNavigationPageのDIコンテナへの登録  
 
 変更前  
@@ -10,6 +33,9 @@ protected override void RegisterTypes()
     Container.RegisterTypeForNavigation<TextToSpeechPage>();
 }
 ```
+
+* Xamarin.Forms名前空間のusing宣言の追加  
+* NavigationPageをContainerへ登録  
 
 変更後  
 ```cs
