@@ -1,4 +1,5 @@
-﻿using Prism.Autofac.Forms;
+﻿using Xamarin.Forms;
+using Prism.Autofac.Forms;
 using PrismHansOn.Views;
 
 namespace PrismHansOn
@@ -9,11 +10,12 @@ namespace PrismHansOn
 		{
 			Container.RegisterTypeForNavigation<MainPage>();
 			Container.RegisterTypeForNavigation<TextToSpeechPage>();
+            Container.RegisterTypeForNavigation<NavigationPage>();
 		}
 
 		protected override void OnInitialized()
 		{
-			NavigationService.NavigateAsync(nameof(MainPage));
+            NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
 		}
 	}
 }
