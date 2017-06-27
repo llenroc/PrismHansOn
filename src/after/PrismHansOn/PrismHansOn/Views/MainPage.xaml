@@ -15,6 +15,7 @@
         <Button Text="Navigate to TextToSpeechPage" Command="{Binding NavigateToTextToSpeechPageCommand}"/>
         <Button Text="Display Alert" Command="{Binding DisplayAlertCommand}"/>
         <Button Text="Display Confirm" Command="{Binding DisplayConfirmCommand}"/>
+        <Button Text="Display Action Sheet" Command="{Binding DisplayActionSheetCommand}"/>
     </StackLayout>
 
 </ContentPage>
