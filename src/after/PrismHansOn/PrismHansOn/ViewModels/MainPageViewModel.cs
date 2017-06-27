@@ -7,9 +7,9 @@ namespace PrismHansOn.ViewModels
 {
 	public class MainPageViewModel : BindableBase
 	{
-		private readonly IDeviceService _deviceService;
-
 	    private readonly INavigationService _navigationService;
+
+	    private readonly IPageDialogService _pageDialogService;
 
 		private string _message = "Hello, Prism for Xamarin.Forms!";
 
@@ -32,6 +32,11 @@ namespace PrismHansOn.ViewModels
 			Message = "Updated message.";
 		}).ObservesCanExecute(() => CanUpdateMessage);
 
+        public DelegateCommand DisplayAlertCommand => new DelegateCommand(() =>
+        {
+            _pageDialogService.DisplayAlertAsync("Title", "Hello, Dialog.", "OK");
+        });
+
 	    public DelegateCommand NavigateToTextToSpeechPageCommand => new DelegateCommand(() =>
 	    {
             var navigationParameter = new NavigationParameters();
@@ -40,11 +45,10 @@ namespace PrismHansOn.ViewModels
 	    });
 
 
-        public MainPageViewModel(IDeviceService deviceService, INavigationService navigationService)
-		{
-			_deviceService = deviceService;
-		    _navigationService = navigationService;
-		    Message = Message + " on " + _deviceService.Platform;
-		}
+        public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
+        {
+            _navigationService = navigationService;
+            _pageDialogService = pageDialogService;
+        }
 	}
 }

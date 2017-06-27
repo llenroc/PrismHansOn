@@ -13,6 +13,7 @@
         <Button Text="Update Message" Command="{Binding UpdateMessageCommand}"/>
         <Switch IsToggled="{Binding CanUpdateMessage}"/>
         <Button Text="Navigate to TextToSpeechPage" Command="{Binding NavigateToTextToSpeechPageCommand}"/>
+        <Button Text="Display Alert" Command="{Binding DisplayAlertCommand}"/>
     </StackLayout>
 
 </ContentPage>

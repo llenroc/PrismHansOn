@@ -59,4 +59,5 @@ NavigationService.NavigateAsync(nameof(MainPage));
 
 変更後
 ```cs
+NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
 ```  

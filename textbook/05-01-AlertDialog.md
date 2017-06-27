@@ -1,0 +1,40 @@
+# AlertDialog
+
+## MainPageViewModel.csにアラート表示コマンドにIPageDialogServiceをインジェクションする  
+
+変更前
+```cs  
+public MainPageViewModel(INavigationService navigationService)
+{
+    _navigationService = navigationService;
+}
+```
+
+変更後  
+```cs
+private readonly IPageDialogService _pageDialogService;
+
+public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
+{
+    _navigationService = navigationService;
+    _pageDialogService = pageDialogService;
+}
+```
+
+## MainPageViewModel.csにアラート表示コマンドの追加  
+
+追加
+```cs
+public DelegateCommand DisplayAlertCommand => new DelegateCommand(() =>
+{
+    _pageDialogService.DisplayAlertAsync("Title", "Hello, Dialog.", "OK");
+});
+```
+
+## MainPage.xamlへアラート表示ボタンの追加  
+
+既存のボタンの下へ、新しいボタンを追加しまします。  
+```cs
+<Button Text="Display Alert" Command="{Binding DisplayAlertCommand}"/>
+```
+

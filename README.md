@@ -15,4 +15,6 @@
     1. [前画面へ戻る](textbook/04-02-前画面へ戻る.md)  
     1. [NavigationPageを利用する](textbook/04-03-NavigationPageを利用する.md)  
     1. [画面遷移パラメーター](textbook/04-04-画面遷移パラメーター.md)
+5. PageDialogService  
+    1. [AlertDialog](textbook/05-01-AlertDialog.md)
 5. [Dependency Injectionを利用する](textbook/05-DependencyInjectionを利用する.md)
