@@ -32,11 +32,6 @@ namespace PrismHansOn.ViewModels
 			Message = "Updated message.";
 		}).ObservesCanExecute(() => CanUpdateMessage);
 
-        public DelegateCommand DisplayAlertCommand => new DelegateCommand(() =>
-        {
-            _pageDialogService.DisplayAlertAsync("Title", "Hello, Dialog.", "OK");
-        });
-
 	    public DelegateCommand NavigateToTextToSpeechPageCommand => new DelegateCommand(() =>
 	    {
             var navigationParameter = new NavigationParameters();
@@ -44,6 +39,16 @@ namespace PrismHansOn.ViewModels
 	        _navigationService.NavigateAsync("TextToSpeechPage", navigationParameter);
 	    });
 
+	    public DelegateCommand DisplayAlertCommand => new DelegateCommand(() =>
+	    {
+	        _pageDialogService.DisplayAlertAsync("Title", "Hello, Dialog.", "OK");
+	    });
+
+	    public DelegateCommand DisplayConfirmCommand => new DelegateCommand(async () =>
+	    {
+	        var result = await _pageDialogService.DisplayAlertAsync("Title", "何れかを選んでください。", "はい", "いいえ");
+	        Message = $"Selected:{result}";
+	    });
 
         public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
         {

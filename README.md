@@ -16,5 +16,6 @@
     1. [NavigationPageを利用する](textbook/04-03-NavigationPageを利用する.md)  
     1. [画面遷移パラメーター](textbook/04-04-画面遷移パラメーター.md)
 5. PageDialogService  
-    1. [AlertDialog](textbook/05-01-AlertDialog.md)
+    1. [アラートダイアログの表示](textbook/05-01-アラートダイアログの表示.md)
+    1. [確認ダイアログの表示](textbook/05-02-確認ダイアログの表示.md)
 5. [Dependency Injectionを利用する](textbook/05-DependencyInjectionを利用する.md)
