@@ -1,10 +1,8 @@
-# DelegateCommandを利用する
-
-## ViewのイベントをViewModelへ通知する
+# ViewのイベントをViewModelへ通知する
 
 DelegateCommandを利用しメッセージを更新する  
 
-### ViewModelにメッセージを更新するコマンドを追加する
+## ViewModelにメッセージを更新するコマンドを追加する
 
 Messageプロパティの直下にUpdateMessageCommandプロパティを追加する。  
 
@@ -15,7 +13,7 @@ public DelegateCommand UpdateMessageCommand => new DelegateCommand(() =>
 });
 ```
 
-### MainPageにボタンを追加しUpdateMessageCommandを実行する
+## MainPageにボタンを追加しUpdateMessageCommandを実行する
 
 変更前
 ```xml
