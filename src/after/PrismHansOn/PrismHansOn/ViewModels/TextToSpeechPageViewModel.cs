@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices.WindowsRuntime;
+﻿using System.Diagnostics;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -6,7 +7,7 @@ using PrismHansOn.Models;
 
 namespace PrismHansOn.ViewModels
 {
-    public class TextToSpeechPageViewModel : BindableBase, INavigationAware
+    public class TextToSpeechPageViewModel : BindableBase, IDestructible, INavigationAware
     {
         private readonly INavigationService _navigationService;
 
@@ -47,6 +48,11 @@ namespace PrismHansOn.ViewModels
         public void OnNavigatingTo(NavigationParameters parameters)
         {
 	        Message = (string)parameters["Message"];
+        }
+
+        public void Destroy()
+        {
+            Debug.WriteLine("TextToSpeechPageViewModel#Destroy()");
         }
     }
 }
