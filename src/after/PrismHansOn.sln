@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismHansOn.Android", "PrismHansOn\PrismHansOn.Android\PrismHansOn.Android.csproj", "{3D7EDF55-1CDE-4AD7-A02B-446F969645C1}"
 EndProject
@@ -196,6 +196,8 @@ Global
 		{B438F63E-D904-48BF-8D67-C0189EEC716C}.AppStore|x86.Build.0 = Release|x86
 		{B438F63E-D904-48BF-8D67-C0189EEC716C}.AppStore|x86.Deploy.0 = Release|x86
 		{B438F63E-D904-48BF-8D67-C0189EEC716C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B438F63E-D904-48BF-8D67-C0189EEC716C}.Debug|Any CPU.Build.0 = Debug|x86
+		{B438F63E-D904-48BF-8D67-C0189EEC716C}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{B438F63E-D904-48BF-8D67-C0189EEC716C}.Debug|ARM.ActiveCfg = Debug|ARM
 		{B438F63E-D904-48BF-8D67-C0189EEC716C}.Debug|ARM.Build.0 = Debug|ARM
 		{B438F63E-D904-48BF-8D67-C0189EEC716C}.Debug|ARM.Deploy.0 = Debug|ARM

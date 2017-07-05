@@ -10,7 +10,7 @@ namespace PrismHansOn.UWP
 		{
 			this.InitializeComponent();
 
-			LoadApplication(new PrismHansOn.App());
+			LoadApplication(new PrismHansOn.App(new PlatformInitializer()));
 		}
 
 	    private class PlatformInitializer : IPlatformInitializer
