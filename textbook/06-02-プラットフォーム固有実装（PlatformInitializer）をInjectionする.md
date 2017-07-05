@@ -61,8 +61,8 @@ public App(IPlatformInitializer platformInitializer) : base(platformInitializer)
 }
 ```
 
-## 各プラットフォーム別に実装する  
+## 各プラットフォーム別 ITextToSpeechServiceの実装  
 
 * [iOS](06-02-01-ITextToSpeechServiceの実装-iOS.md)  
-* [iOS](06-02-02-ITextToSpeechServiceの実装-Android.md)  
-* [iOS](06-02-03-ITextToSpeechServiceの実装-UWP.md)  
+* [Android](06-02-02-ITextToSpeechServiceの実装-Android.md)  
+* [UWP](06-02-03-ITextToSpeechServiceの実装-UWP.md)  
