@@ -6,6 +6,14 @@ namespace PrismHansOn
 {
 	public partial class App
 	{
+	    public App()
+	    {
+	    }
+
+	    public App(IPlatformInitializer platformInitializer) : base(platformInitializer)
+	    {
+	    }
+
 		protected override void RegisterTypes()
 		{
 			Container.RegisterTypeForNavigation<MainPage>();

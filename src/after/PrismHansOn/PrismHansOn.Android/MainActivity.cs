@@ -6,6 +6,10 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Autofac;
+using Prism;
+using Prism.Autofac.Forms;
+using PrismHansOn.Models;
 
 namespace PrismHansOn.Droid
 {
@@ -20,8 +24,19 @@ namespace PrismHansOn.Droid
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
-			LoadApplication(new App());
+			LoadApplication(new App(new PlatformInitializer()));
 		}
-	}
+
+	    private class PlatformInitializer : IPlatformInitializer
+	    {
+	        public void RegisterTypes(IContainer container)
+	        {
+	            var builder = new ContainerBuilder();
+	            builder.RegisterType<TextToSpeechService>().As<ITextToSpeechService>().SingleInstance();
+	            builder.Update(container);
+	        }
+	    }
+
+    }
 }
 

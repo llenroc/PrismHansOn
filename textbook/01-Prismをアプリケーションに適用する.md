@@ -27,6 +27,10 @@ namespace PrismHansOn
 {
 	public partial class App
 	{
+	    public App()
+	    {
+	    }
+
 		protected override void RegisterTypes()
 		{
 		}

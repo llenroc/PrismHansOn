@@ -1,21 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+﻿using Autofac;
+using Prism.Autofac.Forms;
+using PrismHansOn.Models;
 
 namespace PrismHansOn.UWP
 {
-	public sealed partial class MainPage
+    public sealed partial class MainPage
 	{
 		public MainPage()
 		{
@@ -23,5 +12,15 @@ namespace PrismHansOn.UWP
 
 			LoadApplication(new PrismHansOn.App());
 		}
-	}
+
+	    private class PlatformInitializer : IPlatformInitializer
+	    {
+	        public void RegisterTypes(IContainer container)
+	        {
+	            var builder = new ContainerBuilder();
+	            builder.RegisterType<TextToSpeechService>().As<ITextToSpeechService>().SingleInstance();
+	            builder.Update(container);
+	        }
+	    }
+    }
 }

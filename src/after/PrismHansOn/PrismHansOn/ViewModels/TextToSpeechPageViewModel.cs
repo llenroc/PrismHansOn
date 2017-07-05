@@ -2,12 +2,15 @@
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using PrismHansOn.Models;
 
 namespace PrismHansOn.ViewModels
 {
     public class TextToSpeechPageViewModel : BindableBase, INavigationAware
     {
         private readonly INavigationService _navigationService;
+
+        private readonly ITextToSpeechService _textToSpeechService;
 
         private string _message;
 
@@ -22,9 +25,15 @@ namespace PrismHansOn.ViewModels
             _navigationService.GoBackAsync();
         });
 
-        public TextToSpeechPageViewModel(INavigationService navigationService)
+        public DelegateCommand SpeakCommand => new DelegateCommand(() =>
+        {
+            _textToSpeechService.Speak(Message);
+        });
+
+        public TextToSpeechPageViewModel(INavigationService navigationService, ITextToSpeechService textToSpeechService)
         {
             _navigationService = navigationService;
+            _textToSpeechService = textToSpeechService;
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)

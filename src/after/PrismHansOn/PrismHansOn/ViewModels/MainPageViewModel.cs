@@ -55,12 +55,12 @@ namespace PrismHansOn.ViewModels
 	    public DelegateCommand DisplayActionSheetCommand => new DelegateCommand(() =>
 	    {
             var cancelButton = ActionSheetButton.CreateCancelButton("キャンセル", () => Message = "Selected:Cancel");
-	        var deleteButton = ActionSheetButton.CreateCancelButton("削除", () => Message = "Selected:Cancel");
+	        var deleteButton = ActionSheetButton.CreateDestroyButton("削除", () => Message = "Selected:Cancel");
 
 	        var action = (Action<string>)(selectedItem => { Message = $"Selected:{selectedItem}"; });
-            var twitterButton = ActionSheetButton.CreateCancelButton("ついったー", action, "Twitter");
-	        var lineButton = ActionSheetButton.CreateCancelButton("らいん", action, "LINE");
-	        var facebookButton = ActionSheetButton.CreateCancelButton("ふぇいすぶっく", action, "Facebook");
+            var twitterButton = ActionSheetButton.CreateButton("ついったー", action, "Twitter");
+	        var lineButton = ActionSheetButton.CreateButton("らいん", action, "LINE");
+	        var facebookButton = ActionSheetButton.CreateButton("ふぇいすぶっく", action, "Facebook");
             _pageDialogService.DisplayActionSheetAsync("共有先を選択してください。", cancelButton, deleteButton, twitterButton, lineButton, facebookButton);
 	    });
 

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Autofac;
 using Foundation;
+using Prism.Autofac.Forms;
+using PrismHansOn.Models;
 using UIKit;
 
 namespace PrismHansOn.iOS
@@ -23,9 +25,19 @@ namespace PrismHansOn.iOS
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init();
-			LoadApplication(new App());
+			LoadApplication(new App(new PlatformInitializer()));
 
 			return base.FinishedLaunching(app, options);
 		}
+
+	    private class PlatformInitializer : IPlatformInitializer
+	    {
+	        public void RegisterTypes(IContainer container)
+	        {
+                var builder = new ContainerBuilder();
+	            builder.RegisterType<TextToSpeechService>().As<ITextToSpeechService>().SingleInstance();
+                builder.Update(container);
+	        }
+	    }
 	}
 }
