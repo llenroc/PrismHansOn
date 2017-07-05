@@ -20,5 +20,9 @@
     1. [確認ダイアログの表示](textbook/05-02-確認ダイアログの表示.md)
     1. [アクションシートの表示](textbook/05-03-アクションシートの表示.md)
 6. Dependency Injectionを利用する
-    1. [Prism組込みのDependency Injectionを利用する](textbook/06-01-Prism組込みのDependency Injectionを利用する.md)
-    1. [固有サービスをInjectionする]()
+    1. [Prism組込みのDependency Injectionを利用する](textbook/06-01-Prism組込みのDependency Injectionを利用する.md)  
+    1. [固有サービスをInjectionする](06-02-固有サービスをInjectionする.md)
+        1. [ITextToSpeechServiceの実装-iOS](06-02-01-ITextToSpeechServiceの実装-iOS.md)
+        1. [ITextToSpeechServiceの実装-Android](06-02-02-ITextToSpeechServiceの実装-Android.md)
+        1. [ITextToSpeechServiceの実装-UWP](06-02-03-ITextToSpeechServiceの実装-UWP.md)
+        
