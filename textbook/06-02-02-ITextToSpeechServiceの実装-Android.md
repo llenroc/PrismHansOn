@@ -1,4 +1,4 @@
-# ITextToSpeechServiceの実装：iOS  
+# ITextToSpeechServiceの実装：Android  
 
 ## ITextToSpeechServiceの実装クラスを作成する  
 
