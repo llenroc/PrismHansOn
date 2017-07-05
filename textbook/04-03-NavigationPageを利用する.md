@@ -12,7 +12,7 @@
              x:Class="PrismHansOn.Views.TextToSpeechPage">
 ```
 
-変更後
+変更後（Titleの追加）
 ```cs
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
