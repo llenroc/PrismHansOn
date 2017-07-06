@@ -6,7 +6,7 @@
 
 ## 内容
 1. [Prismをアプリケーションに適用する](textbook/01-Prismをアプリケーションに適用する.md)
-2. [ViewModelを追加する](textbook/02-ViewModelを追加する.md)  
+2. [INotifyPropertyChangedを実装した基底クラスを利用する](textbook/02-INotifyPropertyChangedを実装した基底クラスを利用する.md)  
 3. DelegateCommandを利用する  
     1. [ViewのイベントをViewModelへ通知する](textbook/03-01-ViewのイベントをViewModelへ通知する.md)  
     1. [Commandの実行可否を制御する](textbook/03-02-Commandの実行可否を制御する.md)  

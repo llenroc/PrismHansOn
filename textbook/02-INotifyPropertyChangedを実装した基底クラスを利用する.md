@@ -1,4 +1,4 @@
-# ViewModelを追加する
+# INotifyPropertyChangedを実装した基底クラスを利用する
 
 ## MainPageViewModel.csの追加  
 
