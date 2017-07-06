@@ -1,15 +1,15 @@
 # NavigationPageを利用する
 
-## TextToSpeechPage.xamlへタイトルの追加  
+## SecondPage.xamlへタイトルの追加  
 
 変更前
 ```cs
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-             mvvm:ViewModelLocator.AutowireViewModel="True"
-             x:Class="PrismHansOn.Views.TextToSpeechPage">
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PrismHansOn.Views.SecondPage">
 ```
 
 変更後（Titleの追加）
@@ -17,10 +17,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-             mvvm:ViewModelLocator.AutowireViewModel="True"
-             x:Class="PrismHansOn.Views.TextToSpeechPage"
-             Title="Text to Speech Page">
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PrismHansOn.Views.SecondPage"
+             Title="Second Page">
 ```
 
 ## App.xaml.csでNavigationPageのDIコンテナへの登録  
@@ -30,7 +30,7 @@
 protected override void RegisterTypes()
 {
     Container.RegisterTypeForNavigation<MainPage>();
-    Container.RegisterTypeForNavigation<TextToSpeechPage>();
+    Container.RegisterTypeForNavigation<SecondPage>();
 }
 ```
 
@@ -45,7 +45,7 @@ using Xamarin.Forms;
 protected override void RegisterTypes()
 {
     Container.RegisterTypeForNavigation<MainPage>();
-    Container.RegisterTypeForNavigation<TextToSpeechPage>();
+    Container.RegisterTypeForNavigation<SecondPage>();
     Container.RegisterTypeForNavigation<NavigationPage>();
 }
 ```

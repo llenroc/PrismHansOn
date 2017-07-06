@@ -1,8 +1,11 @@
-# 固有サービスをInjectionする  
+# 共通部分を実装する   
+
+本節では、Xamarin.Formsの共有部分からプラットフォーム固有実装を呼び出す箇所を実装します。  
+プラットフォーム固有の実装は後続をご覧ください。  
 
 ## ITextToSpeechService.csの追加  
 
-ModelsフォルダにITextToSpeechService.csを追加 
+Modelsフォルダに、文字列を読み上げるためのサービスのインターフェース、ITextToSpeechService.csを追加します。  
 
 ```cs
 namespace PrismHansOn.Models
@@ -14,28 +17,21 @@ namespace PrismHansOn.Models
 }
 ```
 
-## TextToSpeechPageViewModelを修正する  
+## MainPageViewModel.csへITextToSpeechService実行する処理を追加する  
 
-TextToSpeechPageViewModelへITextToSpeechServiceをインジェクションする  
-■変更前  
-```cs
-public TextToSpeechPageViewModel(INavigationService navigationService)
-{
-    _navigationService = navigationService;
-}
-```
+ITextToSpeechServiceの実体は、DIコンテナからインジェクションさせます。  
+このため、MainPageViewModel.csのコンストラクタでITextToSpeechServiceのインスタンスを受け取り、フィールドへ格納するよう修正します。  
 
 ■変更後
 ```cs
 private readonly ITextToSpeechService _textToSpeechService;
-public TextToSpeechPageViewModel(INavigationService navigationService, ITextToSpeechService textToSpeechService)
+public MainPageViewModel(ITextToSpeechService textToSpeechService)
 {
-    _navigationService = navigationService;
     _textToSpeechService = textToSpeechService;
 }
 ```
 
-ITextToSpeechServiceを実行するコマンドを追加する  
+その上でITextToSpeechServiceを実行するコマンドを追加します。  
 
 ```cs
 public DelegateCommand SpeakCommand => new DelegateCommand(() =>
@@ -44,16 +40,17 @@ public DelegateCommand SpeakCommand => new DelegateCommand(() =>
 });
 ```
 
-## TextToSpeechPage.xamlからSpeakCommandを呼び出す  
+## MainPage.xamlからSpeakCommandを呼び出す  
 
-戻るボタンの下に追加
+Switchの下に追加
 ```cs
 <Button Text="Speak" Command="{Binding SpeakCommand}"/>
 ```
 
 ## App.csクラスにプラットフォーム別の初期化に対応したコンストラクタを追加する
 
-PrismHansOnプロジェクトのApp.csクラスを開き、次のコンストラクタを追加する。
+プラットフォーム固有の実装に対する設定を受け取るため、App.csクラスを修正します。  
+PrismHansOnプロジェクトのApp.csクラスを開き、次のコンストラクタを追加してください。  
 
 ```cs
 public App(IPlatformInitializer platformInitializer) : base(platformInitializer)

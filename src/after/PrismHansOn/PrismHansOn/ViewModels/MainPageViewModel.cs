@@ -3,24 +3,26 @@ using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
+using PrismHansOn.Models;
 
 namespace PrismHansOn.ViewModels
 {
 	public class MainPageViewModel : BindableBase
 	{
-	    private readonly INavigationService _navigationService;
-
-	    private readonly IPageDialogService _pageDialogService;
-
 		private string _message = "Hello, Prism for Xamarin.Forms!";
 
-		public string Message
+        private bool _canUpdateMessage;
+
+        private readonly ITextToSpeechService _textToSpeechService;
+
+	    private readonly INavigationService _navigationService;
+
+        public string Message
 		{
 			get => _message;
 			set => SetProperty(ref _message, value);
 		}
 
-		private bool _canUpdateMessage;
 
 		public bool CanUpdateMessage
 		{
@@ -33,41 +35,22 @@ namespace PrismHansOn.ViewModels
 			Message = "Updated message.";
 		}).ObservesCanExecute(() => CanUpdateMessage);
 
-	    public DelegateCommand NavigateToTextToSpeechPageCommand => new DelegateCommand(() =>
+	    public DelegateCommand SpeakCommand => new DelegateCommand(() =>
 	    {
-            var navigationParameter = new NavigationParameters();
-            navigationParameter.Add("Message", "Hello, NavigationParameter.");
-	        _navigationService.NavigateAsync("TextToSpeechPage", navigationParameter);
+	        _textToSpeechService.Speak(Message);
 	    });
 
-	    public DelegateCommand DisplayAlertCommand => new DelegateCommand(() =>
+	    public DelegateCommand NavigateToSecondPageCommand => new DelegateCommand(() =>
 	    {
-	        _pageDialogService.DisplayAlertAsync("Title", "Hello, Dialog.", "OK");
+	        var navigationParameter = new NavigationParameters();
+	        navigationParameter.Add("Message", "Hello, Navigation Parameter.");
+	        _navigationService.NavigateAsync("SecondPage", navigationParameter);
 	    });
 
-	    public DelegateCommand DisplayConfirmCommand => new DelegateCommand(async () =>
-	    {
-	        var result = await _pageDialogService.DisplayAlertAsync("Title", "何れかを選んでください。", "はい", "いいえ");
-	        Message = $"Selected:{result}";
-	    });
-
-
-	    public DelegateCommand DisplayActionSheetCommand => new DelegateCommand(() =>
-	    {
-            var cancelButton = ActionSheetButton.CreateCancelButton("キャンセル", () => Message = "Selected:Cancel");
-	        var deleteButton = ActionSheetButton.CreateDestroyButton("削除", () => Message = "Selected:Cancel");
-
-	        var action = (Action<string>)(selectedItem => { Message = $"Selected:{selectedItem}"; });
-            var twitterButton = ActionSheetButton.CreateButton("ついったー", action, "Twitter");
-	        var lineButton = ActionSheetButton.CreateButton("らいん", action, "LINE");
-	        var facebookButton = ActionSheetButton.CreateButton("ふぇいすぶっく", action, "Facebook");
-            _pageDialogService.DisplayActionSheetAsync("共有先を選択してください。", cancelButton, deleteButton, twitterButton, lineButton, facebookButton);
-	    });
-
-        public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
+        public MainPageViewModel(INavigationService navigationService, ITextToSpeechService textToSpeechService)
         {
             _navigationService = navigationService;
-            _pageDialogService = pageDialogService;
+            _textToSpeechService = textToSpeechService;
         }
 	}
 }

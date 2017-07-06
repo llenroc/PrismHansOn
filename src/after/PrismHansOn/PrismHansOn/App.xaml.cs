@@ -17,13 +17,13 @@ namespace PrismHansOn
 		protected override void RegisterTypes()
 		{
 			Container.RegisterTypeForNavigation<MainPage>();
-			Container.RegisterTypeForNavigation<TextToSpeechPage>();
+            Container.RegisterTypeForNavigation<SecondPage>();
             Container.RegisterTypeForNavigation<NavigationPage>();
-		}
+        }
 
 		protected override void OnInitialized()
 		{
-            NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
-		}
+		    NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
+        }
 	}
 }

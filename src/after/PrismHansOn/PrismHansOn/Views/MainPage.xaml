@@ -12,10 +12,8 @@
                HorizontalOptions="Center" />
         <Button Text="Update Message" Command="{Binding UpdateMessageCommand}"/>
         <Switch IsToggled="{Binding CanUpdateMessage}"/>
-        <Button Text="Navigate to TextToSpeechPage" Command="{Binding NavigateToTextToSpeechPageCommand}"/>
-        <Button Text="Display Alert" Command="{Binding DisplayAlertCommand}"/>
-        <Button Text="Display Confirm" Command="{Binding DisplayConfirmCommand}"/>
-        <Button Text="Display Action Sheet" Command="{Binding DisplayActionSheetCommand}"/>
+        <Button Text="Speak" Command="{Binding SpeakCommand}"/>
+        <Button Text="Navigate" Command="{Binding NavigateToSecondPageCommand}"/>
     </StackLayout>
 
 </ContentPage>

@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace PrismHansOn.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TextToSpeechPage : ContentPage
-	{
-		public TextToSpeechPage()
-		{
-			InitializeComponent();
-		}
-	}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class SecondPage : ContentPage
+    {
+        public SecondPage()
+        {
+            InitializeComponent();
+        }
+    }
 }
