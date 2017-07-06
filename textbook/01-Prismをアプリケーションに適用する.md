@@ -25,20 +25,20 @@ using Prism.Autofac.Forms;
 
 namespace PrismHansOn
 {
-	public partial class App
-	{
-	    public App()
-	    {
-	    }
+    public partial class App
+    {
+        public App()
+        {
+        }
 
-		protected override void RegisterTypes()
-		{
-		}
+        protected override void RegisterTypes()
+        {
+        }
 
-		protected override void OnInitialized()
-		{
-		}
-	}
+        protected override void OnInitialized()
+        {
+        }
+    }
 }
 ```
 
@@ -48,7 +48,7 @@ App.xaml.cs
 ```cs
 protected override void RegisterTypes()
 {
-	Container.RegisterTypeForNavigation<MainPage>();
+    Container.RegisterTypeForNavigation<MainPage>();
 }
 ```
 
@@ -58,7 +58,7 @@ App.xaml.cs
 ```cs
 protected override void OnInitialized()
 {
-	NavigationService.NavigateAsync(nameof(MainPage));
+    NavigationService.NavigateAsync(nameof(MainPage));
 }
 ```
 

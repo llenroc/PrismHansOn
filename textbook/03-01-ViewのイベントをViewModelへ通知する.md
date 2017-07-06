@@ -9,7 +9,7 @@ Messageプロパティの直下にUpdateMessageCommandプロパティを追加�
 ```cs
 public DelegateCommand UpdateMessageCommand => new DelegateCommand(() =>
 {
-	Message = "Updated message.";
+    Message = "Updated message.";
 });
 ```
 
@@ -24,7 +24,7 @@ public DelegateCommand UpdateMessageCommand => new DelegateCommand(() =>
              mvvm:ViewModelLocator.AutowireViewModel="True"
              x:Class="PrismHansOn.Views.MainPage">
 
-	<Label Text="{Binding Message}" 
+    <Label Text="{Binding Message}" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
 
