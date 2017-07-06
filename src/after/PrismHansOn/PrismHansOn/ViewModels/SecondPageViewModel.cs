@@ -40,7 +40,7 @@ namespace PrismHansOn.ViewModels
         public DelegateCommand DisplayActionSheetCommand => new DelegateCommand(() =>
         {
             var cancelButton = ActionSheetButton.CreateCancelButton("キャンセル", () => Message = "Selected:Cancel");
-            var deleteButton = ActionSheetButton.CreateDestroyButton("削除", () => Message = "Selected:Cancel");
+            var deleteButton = ActionSheetButton.CreateDestroyButton("削除", () => Message = "Selected:削除");
 
             var twitterButton = ActionSheetButton.CreateButton("ついったー", SelectedTwitter);
             var lineButton = ActionSheetButton.CreateButton("らいん", SelectedLine);
