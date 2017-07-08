@@ -21,6 +21,8 @@
 * [Xamarin 公式の QuickStart Phoneword を日本語でやるハンズオン](https://github.com/ytabuchi/XamarinHOL)
 * [Xamarin Dev Days のハンズオン（Xamarin.Forms＋MVVM 基礎）](https://github.com/chomado/xamarin-dev-doc/)
 
+### さあそれでは始めましょう！
+
 ---
 
 
