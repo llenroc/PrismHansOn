@@ -10,6 +10,17 @@
 * Prism for Xamarin.Formsの基本操作を理解する  
 * MVVMアーキテクチャの概要を理解する  
 
++++
+
+### 対象者  
+
+* Xamarin開発環境が構築されている  
+* Xamarin.Formsで簡単なアプリを作成したことがある  
+
+具体的には次のハンズオンを実施したことがあるレベルを想定しています。  
+* [Xamarin 公式の QuickStart Phoneword を日本語でやるハンズオン](https://github.com/ytabuchi/XamarinHOL)
+* [Xamarin Dev Days のハンズオン（Xamarin.Forms＋MVVM 基礎）](https://github.com/chomado/xamarin-dev-doc/)
+
 ---
 
 
