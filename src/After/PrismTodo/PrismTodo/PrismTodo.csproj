@@ -15,4 +15,12 @@
     <Compile Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
     <EmbeddedResource Include="**\*.xaml" SubType="Designer" Generator="MSBuild:UpdateDesignTimeXaml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PrismTodo.Service\PrismTodo.Service.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\SelectUserGroupPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>
