@@ -2,12 +2,11 @@
 using System.Threading.Tasks;
 using PrismTodo.Service;
 
-namespace PrismTodo.Usecases
+namespace PrismTodo.Repositories
 {
-    public interface IManageTodo
+    public interface ITodoRepository
     {
         ReadOnlyObservableCollection<TodoItem> TodoItems { get; }
-
         Task LoadAsync();
     }
 }

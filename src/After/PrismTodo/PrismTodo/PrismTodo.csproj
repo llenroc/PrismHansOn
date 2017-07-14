@@ -5,6 +5,7 @@
     <DebugType>full</DebugType>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.0.1" />
     <PackageReference Include="Microsoft.NETCore.Portable.Compatibility" Version="1.0.1" />
     <PackageReference Include="Prism.Autofac.Forms" Version="6.3.0" />
     <PackageReference Include="Xamarin.Forms" Version="2.3.4.247" />

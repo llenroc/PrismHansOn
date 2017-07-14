@@ -6,9 +6,20 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="PrismTodo.Views.MainPage"
              Title="Main">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Text="Load" Command="{Binding LoadTodoItemsCommand}"/>
+        <ListView Grid.Row="1" ItemsSource="{Binding TodoItems}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Title}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
 
 </ContentPage>

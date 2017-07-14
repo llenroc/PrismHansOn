@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using Autofac;
 using Prism.Autofac.Forms;
+using PrismTodo.DataStore;
 using PrismTodo.Repositories;
+using PrismTodo.Service;
 using PrismTodo.Usecases;
 using Xamarin.Forms;
 using PrismTodo.Views;
@@ -39,6 +41,10 @@ namespace PrismTodo
             
             // Repository
             builder.RegisterType<ConfigurationRepository>().As<IConfigurationRepository>();
+            builder.RegisterType<TodoRepository>().As<ITodoRepository>();
+            
+            // DataStore
+            builder.RegisterType<TodoServiceClient>().As<ITodoServiceClient>();
             
             builder.Update(Container);
             Container.RegisterTypeForNavigation<SelectUserGroupPage>();
