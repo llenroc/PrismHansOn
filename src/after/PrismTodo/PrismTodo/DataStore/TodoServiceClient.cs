@@ -11,11 +11,6 @@ namespace PrismTodo.DataStore
     {
         private readonly MobileServiceClient _client =
             new MobileServiceClient("http://prismtodo.azurewebsites.net");
-        public Task<TodoItems> GetTodoItemsAsync()
-        {
-            return _client.InvokeApiAsync<TodoItems>(
-                    "Todo", System.Net.Http.HttpMethod.Get, null);
-        }
 
         public Task<IEnumerable<TodoItemOperation>> GetOperationsAsync(int operationNumber)
         {
