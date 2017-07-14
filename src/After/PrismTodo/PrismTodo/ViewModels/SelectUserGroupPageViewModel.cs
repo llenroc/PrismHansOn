@@ -30,13 +30,13 @@ namespace PrismTodo.ViewModels
 	        _pageDialogService.DisplayActionSheetAsync(
 	            "ユーザーグループを選択してください。",
 	            ActionSheetButton.CreateCancelButton("キャンセル", () => { }),
-	            ActionSheetButton.CreateButton("グループ1", SetUserGroup, UserGroup.Group1),
-	            ActionSheetButton.CreateButton("グループ2", SetUserGroup, UserGroup.Group2),
-	            ActionSheetButton.CreateButton("グループ3", SetUserGroup, UserGroup.Group3),
-	            ActionSheetButton.CreateButton("グループ4", SetUserGroup, UserGroup.Group4));
+	            ActionSheetButton.CreateButton("グループ1", OnSelectedUserGroup, UserGroup.Group1),
+	            ActionSheetButton.CreateButton("グループ2", OnSelectedUserGroup, UserGroup.Group2),
+	            ActionSheetButton.CreateButton("グループ3", OnSelectedUserGroup, UserGroup.Group3),
+	            ActionSheetButton.CreateButton("グループ4", OnSelectedUserGroup, UserGroup.Group4));
         }
 
-        private void SetUserGroup(UserGroup userGroup)
+        private void OnSelectedUserGroup(UserGroup userGroup)
         {
              _manageUserGroup.SaveUserGroup(userGroup);
             _navigationService.NavigateAsync("/NavigationPage/MainPage");
