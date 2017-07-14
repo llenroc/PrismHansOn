@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Autofac;
 using Prism.Autofac.Forms;
+using PrismTodo.Repositories;
 using PrismTodo.Usecases;
 using Xamarin.Forms;
 using PrismTodo.Views;
@@ -14,7 +15,7 @@ namespace PrismTodo
     {
         protected override void OnInitialized()
         {
-            if (Container.Resolve<IManageUserGroup>().SelectedUserGroup())
+            if (Container.Resolve<IManageUserGroup>().SelectedUserGroup)
             {
                 NavigationService.NavigateAsync("NavigationPage/MainPage");
             }
@@ -35,6 +36,9 @@ namespace PrismTodo
             // Usecases
             builder.RegisterType<ManageUserGroup>().As<IManageUserGroup>();
             builder.RegisterType<ManageTodo>().As<IManageTodo>();
+            
+            // Repository
+            builder.RegisterType<ConfigurationRepository>().As<IConfigurationRepository>();
             
             builder.Update(Container);
             Container.RegisterTypeForNavigation<SelectUserGroupPage>();

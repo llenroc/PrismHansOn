@@ -9,11 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismTodo.UWP", "PrismTodo\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismTodo.iOS", "PrismTodo\PrismTodo.iOS\PrismTodo.iOS.csproj", "{6A130519-0769-4F71-B77E-501C2C80980D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismTodo", "PrismTodo\PrismTodo\PrismTodo.csproj", "{8355377C-9477-4E74-B2DA-DC495529DF9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrismTodo", "PrismTodo\PrismTodo\PrismTodo.csproj", "{8355377C-9477-4E74-B2DA-DC495529DF9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismTodo.Server", "PrismTodo\PrismTodo.Server\PrismTodo.Server.csproj", "{D6A8BDF0-4BE0-4C71-80DC-422DCADCBF41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrismTodo.Server", "PrismTodo\PrismTodo.Server\PrismTodo.Server.csproj", "{D6A8BDF0-4BE0-4C71-80DC-422DCADCBF41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismTodo.Service", "PrismTodo\PrismTodo.Service\PrismTodo.Service.csproj", "{023A5DA3-3AE2-4B21-A5E1-5DA9352D7ACA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrismTodo.Service", "PrismTodo\PrismTodo.Service\PrismTodo.Service.csproj", "{023A5DA3-3AE2-4B21-A5E1-5DA9352D7ACA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Common", "01.Common", "{59BF7CD0-07CD-4D6D-BC13-71F1172FF431}"
 EndProject
@@ -158,6 +158,8 @@ Global
 		{7DC47DD9-877C-4651-89BB-01FA7771EFDA}.AppStore|x86.Build.0 = Release|x86
 		{7DC47DD9-877C-4651-89BB-01FA7771EFDA}.AppStore|x86.Deploy.0 = Release|x86
 		{7DC47DD9-877C-4651-89BB-01FA7771EFDA}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{7DC47DD9-877C-4651-89BB-01FA7771EFDA}.Debug|Any CPU.Build.0 = Debug|x86
+		{7DC47DD9-877C-4651-89BB-01FA7771EFDA}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{7DC47DD9-877C-4651-89BB-01FA7771EFDA}.Debug|ARM.ActiveCfg = Debug|ARM
 		{7DC47DD9-877C-4651-89BB-01FA7771EFDA}.Debug|ARM.Build.0 = Debug|ARM
 		{7DC47DD9-877C-4651-89BB-01FA7771EFDA}.Debug|ARM.Deploy.0 = Debug|ARM

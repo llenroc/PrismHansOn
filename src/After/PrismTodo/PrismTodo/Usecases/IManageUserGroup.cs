@@ -5,7 +5,9 @@ namespace PrismTodo.Usecases
 {
     public interface IManageUserGroup
     {
-        bool SelectedUserGroup();
+        bool SelectedUserGroup { get; }
+        
+        UserGroup UserGroup { get; }
 
         Task SaveUserGroup(UserGroup userGroup);
     }

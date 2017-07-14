@@ -3,34 +3,28 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Prism.AppModel;
+using PrismTodo.Repositories;
 using PrismTodo.Service;
 
 namespace PrismTodo.Usecases
 {
     public class ManageUserGroup : IManageUserGroup
     {
-        private readonly IApplicationStore _applicationStore;
+        private readonly IConfigurationRepository _configurationRepository;
 
-        public ManageUserGroup(IApplicationStore applicationStore)
+        public ManageUserGroup(IConfigurationRepository configurationRepository)
         {
-            _applicationStore = applicationStore;
+            _configurationRepository = configurationRepository;
         }
 
-        public bool SelectedUserGroup()
-        {
-            return _applicationStore.Properties.ContainsKey(nameof(UserGroup));
-        }
+        public bool SelectedUserGroup => _configurationRepository.SelectedUserGroup;
 
-        public UserGroup GetUserGroup()
-        {
-            var value = _applicationStore.Properties[nameof(UserGroup)];
-            return (UserGroup) Enum.ToObject(typeof(UserGroup), value);
-        }
+        public UserGroup UserGroup => _configurationRepository.UserGroup;
 
         public Task SaveUserGroup(UserGroup userGroup)
         {
-            _applicationStore.Properties[nameof(UserGroup)] = userGroup.ToString();
-            return _applicationStore.SavePropertiesAsync();
+            _configurationRepository.UserGroup = userGroup;
+            return _configurationRepository.SaveAsync();
         }
     }
 }

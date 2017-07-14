@@ -27,28 +27,19 @@ namespace PrismTodo.ViewModels
 
 	    private void SelectUserGroup()
 	    {
-	        var cancelButton = ActionSheetButton.CreateCancelButton("キャンセル", () => { });
-
-	        var userGroup1Button = ActionSheetButton.CreateButton<UserGroup>("グループ1", SetUserGroup, UserGroup.Group1);
-	        var userGroup2Button = ActionSheetButton.CreateButton<UserGroup>("グループ2", SetUserGroup, UserGroup.Group2);
-	        var userGroup3Button = ActionSheetButton.CreateButton<UserGroup>("グループ3", SetUserGroup, UserGroup.Group3);
-	        var userGroup4Button = ActionSheetButton.CreateButton<UserGroup>("グループ4", SetUserGroup, UserGroup.Group4);
 	        _pageDialogService.DisplayActionSheetAsync(
-	            "ユーザーグループを選択してください。", 
-	            cancelButton, 
-	            userGroup1Button, 
-	            userGroup2Button, 
-	            userGroup3Button, 
-	            userGroup4Button);
-
+	            "ユーザーグループを選択してください。",
+	            ActionSheetButton.CreateCancelButton("キャンセル", () => { }),
+	            ActionSheetButton.CreateButton("グループ1", SetUserGroup, UserGroup.Group1),
+	            ActionSheetButton.CreateButton("グループ2", SetUserGroup, UserGroup.Group2),
+	            ActionSheetButton.CreateButton("グループ3", SetUserGroup, UserGroup.Group3),
+	            ActionSheetButton.CreateButton("グループ4", SetUserGroup, UserGroup.Group4));
         }
 
-        private async void SetUserGroup(UserGroup userGroup)
+        private void SetUserGroup(UserGroup userGroup)
         {
-            await _manageUserGroup.SaveUserGroup(userGroup);
-#pragma warning disable CS4014 // この呼び出しを待たないため、現在のメソッドの実行は、呼び出しが完了する前に続行します
+             _manageUserGroup.SaveUserGroup(userGroup);
             _navigationService.NavigateAsync("/NavigationPage/MainPage");
-#pragma warning restore CS4014 // この呼び出しを待たないため、現在のメソッドの実行は、呼び出しが完了する前に続行します
         }
 	}
 }

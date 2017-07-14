@@ -23,14 +23,6 @@ namespace PrismTodo.ViewModels
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-            if (_manageUserGroup.SelectedUserGroup())
-            {
-
-            }
-            else
-            {
-                _navigationService.NavigateAsync("/NavigationPage/SelectUserGroupPage");
-            }
         }
 
         public void OnNavigatingTo(NavigationParameters parameters)
